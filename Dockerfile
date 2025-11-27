@@ -1,5 +1,14 @@
-FROM openjdk:17-jdk-slim
+# Image officielle OpenJDK 17 (stable)
+FROM openjdk:latest
+
+# Répertoire de travail dans le conteneur
 WORKDIR /app
-COPY target/*.jar app.jar
+
+# Copier le JAR généré par Maven
+COPY target/foyer-0.0.2SNAPSHOT.jar app.jar
+
+# Exposer le port de l'application
 EXPOSE 8080
+
+# Commande pour lancer l'application
 ENTRYPOINT ["java", "-jar", "app.jar"]
