@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/foyer-0.0.2SNAPSHOT.jar app.jar
 
 # Exposer le port de l'application
-EXPOSE 8080
+EXPOSE 8089
 
 # Commande pour lancer l'application
 ENTRYPOINT ["java", "-jar", "app.jar"]
