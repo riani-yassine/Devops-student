@@ -1,5 +1,5 @@
 # Image officielle OpenJDK 17 (stable)
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
 
 # Répertoire de travail
 WORKDIR /app
