@@ -64,16 +64,13 @@ pipeline {
                         sh 'cp $KUBECONFIG_FILE $HOME/.kube/config'
                     }
 
-                    // Déploiement MySQL
                     sh 'kubectl apply -f k8s/mysql-secret.yaml'
                     sh 'kubectl apply -f k8s/mysql-deployment.yaml'
                     sh 'kubectl apply -f k8s/mysql-service.yaml'
 
-                    // Déploiement Spring Boot
                     sh 'kubectl apply -f k8s/springboot-deployment.yaml'
                     sh 'kubectl apply -f k8s/springboot-service.yaml'
 
-                    // Vérification des pods et services
                     sh 'kubectl get pods -A'
                     sh 'kubectl get svc -A'
                 }
